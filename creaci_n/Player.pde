@@ -65,30 +65,6 @@ class Player extends Animacion{
       moverIzq[6] = personaje[34];
       moverIzq[7] = personaje[35];
     }
-    else if(estado == 1){ //hielo
-      saltoDer[0] = personaje[14];
-      saltoIzq[0] = personaje[38];
-      irIzq[0] = personaje[36];
-      irIzq[1] = personaje[37];
-      irDer[0] = personaje[12];
-      irDer[1] = personaje[13];
-      moverDer[0] = personaje[16];
-      moverDer[1] = personaje[17];
-      moverDer[2] = personaje[18];
-      moverDer[3] = personaje[19];
-      moverDer[4] = personaje[20];
-      moverDer[5] = personaje[21];
-      moverDer[6] = personaje[22];
-      moverDer[7] = personaje[23];
-      moverIzq[0] = personaje[40];
-      moverIzq[1] = personaje[41];
-      moverIzq[2] = personaje[42];
-      moverIzq[3] = personaje[43];
-      moverIzq[4] = personaje[44];
-      moverIzq[5] = personaje[45];
-      moverIzq[6] = personaje[46];
-      moverIzq[7] = personaje[47];
-    }
   }
   @Override
   void actualizar(){

@@ -5,6 +5,7 @@ class Fondo{
     sizeSprite = size;
     mySprite = new LeerArchivo(8,5,tilemap).getHoja();
     plataforma = new ArrayList<Sprite>();
+    mar =  new ArrayList<Sprite>();
     
     bgFondo = loadImage("BG.png");
     crearPlataforma(name);
@@ -26,6 +27,12 @@ class Fondo{
           s.center.x = sizeSprite/2 + col * sizeSprite;
           s.center.y = sizeSprite/2 + row * sizeSprite;
           plataforma.add(s);
+        }
+        else if(num == 14 || num == 29 || num == 38){
+          Agua a = new Agua (mySprite[num],mySprite[num+1]);
+          a.center.x = sizeSprite/2 + col * sizeSprite;
+          a.center.y = sizeSprite/2 + row * sizeSprite;
+          mar.add(a);
         }
         else if(num == 31){
           Sprite s = new Sprite (mySprite[13],num);

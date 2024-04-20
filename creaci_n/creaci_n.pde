@@ -12,9 +12,9 @@ float view_x = 0;
 float view_y = 0;
 
 PImage[] personaje;
-ArrayList<Sprite> plataforma;
+ArrayList<Sprite> plataforma,mar;
 Player player;
-Fondo lv1;
+Fondo lv;
 
 void setup(){
   size(800,511);
@@ -23,7 +23,7 @@ void setup(){
   player= new Player(personaje[0]);
   player.center.x = 65;
   player.center.y = 100;
-  lv1 = new Fondo("Libro1.csv","Tileset32.png",32);
+  lv = new Fondo("Libro1.csv","Tileset32.png",32);
 }
 
 void draw(){
@@ -32,11 +32,15 @@ void draw(){
 }
 
 void jugar(){
-  lv1.mostrar();
+  lv.mostrar();
   player.mostrarSombra();
   player.mostrar();
   //player.actualizar();
   resolverColision(player,plataforma);
+  for(Sprite a: mar){
+    a.mostrar();
+    ((Animacion)a).actualizar();
+  }
 }
 
 boolean tocado(Sprite s1, Sprite s2){
