@@ -103,6 +103,7 @@ class Player extends Animacion{
     else if(cambio.x < 0)
        direccion= izquierda;
   }
+  @Override
   void seleccionarImagenActual(){
     if(direccion == derecha){
       if(enPiso)
