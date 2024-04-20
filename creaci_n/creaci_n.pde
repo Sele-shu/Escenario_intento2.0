@@ -34,7 +34,10 @@ void draw(){
 void jugar(){
   scroll();
   lv1.mostrar();
+  player.mostrarSombra();
   player.mostrar();
+  //player.actualizar();
+  resolverColision(player,plataforma);
 }
 
 void scroll(){
@@ -108,4 +111,21 @@ boolean estaEnPlataforma(Sprite s, ArrayList<Sprite> pared){
      return true;
   else
      return false;
+}
+void keyPressed(){
+  if(keyCode == RIGHT)
+     player.cambio.x = vel;
+  else if(keyCode == LEFT)
+     player.cambio.x = - vel;
+  else if(keyCode == UP && estaEnPlataforma(player,plataforma)){
+    player.cambio.y = -salto;
+  }
+}
+void keyReleased(){
+  if(keyCode == RIGHT)
+     player.cambio.x = 0;
+  else if(keyCode == LEFT)
+     player.cambio.x = 0;
+  else if (keyCode == UP)
+     player.cambio.y = 0;
 }

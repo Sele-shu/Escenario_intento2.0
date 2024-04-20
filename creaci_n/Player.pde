@@ -17,9 +17,10 @@ class Player extends Animacion{
     moverIzq = new PImage[8];
     saltoDer = new PImage[1];
     saltoIzq = new PImage[1];
+    cargarEstado();
     actual = saltoDer;
   }
-  void mostarSombra(){
+  void mostrarSombra(){
     if(timer < 30){
       tint(120,100);
       if(frameCount % 4== 0){
@@ -88,6 +89,12 @@ class Player extends Animacion{
       moverIzq[6] = personaje[46];
       moverIzq[7] = personaje[47];
     }
+  }
+  @Override
+  void actualizar(){
+    enPlataforma = estaEnPlataforma(this,plataforma);
+    enPiso = cambio.x == 0 && cambio.y == 0;
+    super.actualizar();
   }
   @Override
   void seleccionarDireccion(){
